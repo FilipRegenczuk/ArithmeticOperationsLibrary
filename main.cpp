@@ -7,14 +7,14 @@ char *decToBin(int);
 
 int main()
 {
+//deklaracje u¿ywanych zmiennych
 string str;
 string str2;
 string strZer;
 string strBin;
 string strDopelnienia;
 
-vector <vector <int>> macierz;
-vector <int> temp;
+
 vector <bool> czarty;
 
 int c;
@@ -24,6 +24,8 @@ int pozyczka;
 
 /* zmienne które jednak nie zosta³y u¿yte
 
+vector <vector <int>> macierz;
+vector <int> temp;
 int kolejnyLicz = 0;
 int krotnosc = 0;
 char *pointer;
@@ -32,9 +34,9 @@ char *pointer;
 cin >> str;
 
 
-if(str[0]=='-')
+if(str[0]=='-')                         //sprawdzenie czy wprowadzona liczba jest dodatnia, czy ujemna i wykonanie funkcji dla ujemnej
 {
-str2 = str.substr(1, str.size()-1);
+str2 = str.substr(1, str.size()-1);     //usuniêcie minusa z ci¹gu znaków
 str = str2;
 strZer = str;
 
@@ -50,7 +52,7 @@ for (unsigned int zeruj=0; zeruj<str.size(); zeruj++)
 
 
         pozyczka = 0;
-        for(int i=0; i<c; i++)
+        for(int i=0; i<c; i++)      //konwersja z systemu dzi
         {
 
             switch (str[i])
