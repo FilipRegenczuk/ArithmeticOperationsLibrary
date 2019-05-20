@@ -20,7 +20,7 @@ cout<<"\n\njesteœmy w dodawaniu\n\n";
   int dlB = ciag2.size();
 
   bool przeniesienie=0;
-  bool liczbawyniku=0;
+  bool bitwyniku=0;
   if (dlA > dlB)
   {
       if(ciag2[0]==0)
@@ -72,6 +72,10 @@ cout<<"licz="<<licz<<endl;
       for (int i=31; i>=0; i--)
       {
 
+          bitwyniku = (ciag1[licz*32+i]^ciag2[licz*32+i])^przeniesienie;
+          przeniesienie = ((ciag1[licz*32+i]^ciag2[licz*32+i])&przeniesienie)|(ciag1[licz*32+i]&ciag2[licz*32+i]);
+
+          wynik[licz*32+i] = bitwyniku;
 
           //cout<<pomoc[i*licz];
       }
@@ -81,5 +85,5 @@ cout<<"licz="<<licz<<endl;
       licz--;
   }
 
-    return pomoc;
+    return wynik;
 }
